@@ -2,16 +2,39 @@
     font-family: Georgia, Times, "Times New Roman", serif;
 }
 
+body {
+    background-color: #013369;
+}
+
 .quiz, .scores {
-    margin: 100px auto 0 auto;
-    max-width: 400px;
+    padding-top: 15px;
+    padding-bottom: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: all 0.2s ease;
+    width: 50%;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    border: 2px solid #001429;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+h1 {
+    color: black;
+    text-align: center;
 }
 
 p {
-    margin: 15px 15px;
+    margin: 25px 30px;
+    color: black;
+    line-height: 20px;
+    font-size: larger;
+    text-align: center;
 }
-
-/**/
 
 .landing {
     text-align: center;
@@ -19,33 +42,74 @@ p {
 
 .scoresHeader {
     position: absolute;
-    top: 15px;
-    left: 15px;
+    top: 25px;
+    left: 25px;
+    font-size: large;
 }
 
 .timer {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 22px;
+    right: 25px;
+    font-size: large;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    padding: 9px;
+    border: 2px solid #001429;
+}
+
+.timer p {
+    margin: 10px 10px;
 }
 
 button {
-    display: inline-block;
     margin: 10px;
+    font-weight: 700;
     cursor: pointer;
     color: #fff;
-    background-color: #515052;
+    background-color: #013369;
     border-radius: 5px;
-    border: 0;
+    border: 2px solid #001429;
     padding: 20px;
 }
 
+a button {
+    background-color: whitesmoke;
+    font-weight: 700;
+    color: black;
+    font-size: larger;
+}
+
+a button:hover {
+    background-color: #001429;
+    color: whitesmoke;
+    border: 2px solid black;
+}
+
 button:hover {
-    background-color: #9e99a1;
+    background-color: #001429;
 }
 
 .options button {
-    display: block;
+    display: flexbox;
+    justify-content: center;
+    width: 80%;
+    text-align: center;
+    margin-bottom: -1px;
+}
+
+.scores a button {
+    font-size: 13.3333px;
+    font-weight: 700;
+    color: #fff;
+    background-color: #013369;
+    border-radius: 5px;
+    border: 2px solid #001429;
+    padding: 20px;
+}
+
+#submit-score {
+    padding: 14px;
 }
 
 input[type="text"] {
@@ -62,30 +126,24 @@ input[type="text"] {
     margin-top: 20px;
     padding-top: 15px;
     color: #fff;
-    border-top: 2px solid #4B0082;
+    border-top: 2px solid #001429;
 }
 
 ol {
-    padding-left: 15px;
     max-height: 600px;
     overflow: auto;
 }
-  
-  li {
+
+#highscores {
+    margin-left: -40px;
+}
+
+li {
     padding: 5px;
     list-style: decimal inside none;
 }
-  
-  li:nth-child(odd) {
-    background-color: #dfdae7;
-}
 
-/* This will be applied on any screen smaller than 768px */
-@media screen and (max-width: 768px) {
-
-}
-
-/* This will be applied on any screen smaller than 575px */
-@media screen and  (max-width: 575px) {
-
+li:nth-child(odd) {
+    background-color: #001429;
+    color: white;
 }

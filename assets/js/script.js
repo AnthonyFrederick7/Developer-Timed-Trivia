@@ -1,35 +1,65 @@
 // List of Questions and Answers
 
 var questions = [
-    {
-        prompt: "Inside which HTML element do we put the JavaScript?",
-        options: ["<javascript>", "<js>", "<script>", "<scripting>"],
-        answer: "<script>"
-    },
+  {
+      prompt: "1. What team won the first Super Bowl in 1967?",
+      options: ["Green Bay Packers", "Chicago Bears", "Kansas City Chiefs", "Dallas Cowboys"],
+      answer: "Green Bay Packers"
+  },
 
-    {
-        prompt: "How do you call a function named myFunction?",
-        options: ["call myFunction()", "myFunction()", "call function myFunction", "Call.myFunction"],
-        answer: "myFunction()"
-    },
+  {
+      prompt: "2. Who is the NFLs greatest Iron Man? (Most consecutive starts)",
+      options: ["Philip Rivers", "Peyton Manning", "Tom Brady", "Brett Favre"],
+      answer: "Brett Favre"
+  },
 
-    {
-        prompt: "How does a for loop start?",
-        options: ["for (i = 0; i <= 5; i++)", "for (i = 0; i <= 5)", "for i = 1 to 5", " for (i <= 5; i++)"],
-        answer: "for (i = 0; i <= 5; i++)"
-    },
+  {
+      prompt: "3. What team has never had a Hall of Famer play for them?",
+      options: ["Jacksonville Jaguars", "Cleveland Browns", "Houston Texans", "Arizona Cardinals"],
+      answer: "Jacksonville Jaguars"
+  },
 
-    {
-        prompt: "In JavaScript, which of the following is a logical operator?",
-        options: ["|", "&&", "%", "/"],
-        answer: "&&" 
-    },
+  {
+      prompt: "4. What team is the only team to go undefeated including the postseason?",
+      options: ["New England Patriots", "Philadelphia Eagles", "Miami Dolphins", "Dallas Cowboys"],
+      answer: "Miami Dolphins" 
+  },
 
-    {
-        prompt: "A named element in a JavaScript program that is used to store and retrieve data is a _____.",
-        options: ["method", "assignment operator", "variable", "string"],
-        answer: "variable"
-    }];
+  {
+      prompt: "5. What US state has produced the most Hall of Famers?",
+      options: ["Mississippi", "Texas", "Florida", "California"],
+      answer: "Mississippi"
+  },
+
+  {
+    prompt: "6. What non-QB player holds the record for most Touchdowns in a single season?",
+    options: ["Randy Moss", "Emmit Smith", "Ladainian Tomlinson", "Calvin Johnson"],
+    answer: "Ladainian Tomlinson" 
+  },
+
+  {
+    prompt: "7. Who holds the record for most career receptions?",
+    options: ["Calvin Johnson", "Larry Fitzgerald", "Terrell Owens", "Jerry Rice"],
+    answer: "Jerry Rice" 
+  },
+
+  {
+    prompt: "8. What team is the only community owned and non-profit team?",
+    options: ["Baltimore Ravens", "Green Bay Packers", "Minnesota Vikings", "Dallas Cowboys"],
+    answer: "Green Bay Packers" 
+  },
+
+  {
+    prompt: "9. Who holds the record for the longest field goal?",
+    options: ["Justin Tucker", "Stephen Gostkowski", "Adam Vinatieri", "Jason Hanson"],
+    answer: "Justin Tucker" 
+  },
+
+  {
+    prompt: "10. What team is the newest NFL franchise",
+    options: ["Tennessee Titans", "Washington Commanders", "Las Vegas Raiders", "Houston Texans"],
+    answer: "Houston Texans" 
+  }];
 
 // Get Dom Elements
 
@@ -51,28 +81,28 @@ var timerId;
 // Start quiz and hide frontpage
 
 function quizStart() {
-    timerId = setInterval(clockTick, 1000);
-    timerEl.textContent = time;
-    var landingScreenEl = document.getElementById("start-screen");
-    landingScreenEl.setAttribute("class", "hide");
-    questionsEl.removeAttribute("class");
-    getQuestion();
+  timerId = setInterval(clockTick, 1000);
+  timerEl.textContent = time;
+  var landingScreenEl = document.getElementById("start-screen");
+  landingScreenEl.setAttribute("class", "hide");
+  questionsEl.removeAttribute("class");
+  getQuestion();
 }
 
 // Loop through array of questions and answers and create list with buttons
 
 function getQuestion() {
-    var currentQuestion = questions[currentQuestionIndex];
-  var promptEl = document.getElementById("question-words")
-    promptEl.textContent = currentQuestion.prompt;
-    choicesEl.innerHTML = "";
-    currentQuestion.options.forEach(function(choice, i) {
-        var choiceBtn = document.createElement("button");
-        choiceBtn.setAttribute("value", choice);
-        choiceBtn.textContent = i + 1 + ". " + choice;
-        choiceBtn.onclick = questionClick;
-        choicesEl.appendChild(choiceBtn);
-    });
+  var currentQuestion = questions[currentQuestionIndex];
+var promptEl = document.getElementById("question-words")
+  promptEl.textContent = currentQuestion.prompt;
+  choicesEl.innerHTML = "";
+  currentQuestion.options.forEach(function(choice, i) {
+      var choiceBtn = document.createElement("button");
+      choiceBtn.setAttribute("value", choice);
+      choiceBtn.textContent = i + 1 + ". " + choice;
+      choiceBtn.onclick = questionClick;
+      choicesEl.appendChild(choiceBtn);
+  });
 }
 
 // Check for right answers and deduct time for wrong answer, go to next question
@@ -99,52 +129,73 @@ function questionClick() {
       quizEnd();
     } else {
       getQuestion();
+  if (this.value !== questions[currentQuestionIndex].answer) {
+    time -= 10;
+    if (time < 0) {
+      time = 0;
     }
+    timerEl.textContent = time;
+    feedbackEl.textContent = `Wrong! The correct answer was ${questions[currentQuestionIndex].answer}.`;
+    feedbackEl.style.color = "#d50a0a";
+  } else {
+    feedbackEl.textContent = "Correct!";
+    feedbackEl.style.color = "green";
+  }
+  feedbackEl.setAttribute("class", "feedback");
+  setTimeout(function() {
+    feedbackEl.setAttribute("class", "feedback hide");
+  }, 2000);
+  currentQuestionIndex++;
+  if (currentQuestionIndex === questions.length) {
+    quizEnd();
+  } else {
+    getQuestion();
+  }
 }
 
 // End quiz by hiding questions, stop timer and show final score
 
 function quizEnd() {
-    clearInterval(timerId);
-    var endScreenEl = document.getElementById("quiz-end");
-    endScreenEl.removeAttribute("class");
-    var finalScoreEl = document.getElementById("score-final");
-    finalScoreEl.textContent = time;
-    questionsEl.setAttribute("class", "hide");
+  clearInterval(timerId);
+  var endScreenEl = document.getElementById("quiz-end");
+  endScreenEl.removeAttribute("class");
+  var finalScoreEl = document.getElementById("score-final");
+  finalScoreEl.textContent = time;
+  questionsEl.setAttribute("class", "hide");
 }
 
 // End quiz if timer reaches 0
 
 function clockTick() {
-    time--;
-    timerEl.textContent = time;
-    if (time <= 0) {
-      quizEnd();
-    }
+  time--;
+  timerEl.textContent = time;
+  if (time <= 0) {
+    quizEnd();
+  }
 }
 
 // Save score in local storage along with users' name
 
 function saveHighscore() {
-    var name = nameEl.value.trim();
-    if (name !== "") {
-      var highscores =
-        JSON.parse(window.localStorage.getItem("highscores")) || [];
-      var newScore = {
-        score: time,
-        name: name
-      };
-      highscores.push(newScore);
-      window.localStorage.setItem("highscores", JSON.stringify(highscores));
-    }
+  var name = nameEl.value.trim();
+  if (name !== "") {
+    var highscores =
+      JSON.parse(window.localStorage.getItem("highscores")) || [];
+    var newScore = {
+      score: time,
+      name: name
+    };
+    highscores.push(newScore);
+    window.localStorage.setItem("highscores", JSON.stringify(highscores));
+  }
 }
 
 // Save users' score after pressing enter
 
 function checkForEnter(event) {
-    if (event.key === "Enter") {
-        saveHighscore();
-    }
+  if (event.key === "Enter") {
+      saveHighscore();
+  }
 }
 nameEl.onkeyup = checkForEnter;
 
