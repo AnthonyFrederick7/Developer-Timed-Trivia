@@ -49,8 +49,9 @@ p {
 
 .timer {
     position: absolute;
-    top: 22px;
-    right: 25px;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     font-size: large;
     background-color: whitesmoke;
     border-radius: 5px;
@@ -59,7 +60,7 @@ p {
 }
 
 .timer p {
-    margin: 10px 10px;
+    margin: 5px 5px;
 }
 
 button {
@@ -121,12 +122,15 @@ input[type="text"] {
 }
 
 .feedback {
+    position: absolute;
+    left: 50%;
+    top: 71%;
+    transform: translate(-50%,-50%);
     font-style: bold;
     font-size: 120%;
     margin-top: 20px;
     padding-top: 15px;
     color: #fff;
-    border-top: 2px solid #001429;
 }
 
 ol {
@@ -146,4 +150,32 @@ li {
 li:nth-child(odd) {
     background-color: #001429;
     color: white;
+}
+
+@media screen and (max-width: 425px) {
+    button { padding: 10px;
+        font-size: medium;
+    }
+    a button {
+        font-size: 15px;
+    }
+    h2 {
+        font-size: 1.2em;
+    }
+    .quiz, .scores {
+        width: 80%;
+    }
+    .feedback {
+        width: 100%;
+        text-align: center;
+    }
+    .timer {
+        padding: 4px;
+        top: 18px;
+        font-size: 15px;
+    }
+    .scores a button {
+        padding: 10px;
+        font-size: 16px;
+    }
 }
