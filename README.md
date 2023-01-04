@@ -20,7 +20,7 @@ N/A
 
   - At anytime you can click the view highscores button in the top left corner, however if you're in the middle of the quiz, it will stop the quiz. 
 
-![Images of Trivia Game](/assets/images/Timed-Trivia-Walkthrough.mp4)
+![Images of Trivia Game](/assets/images/Trivia-Game-Walkthrough.gif)
 
 ## Credits
 
