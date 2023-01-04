@@ -19,9 +19,9 @@ N/A
   - Once the quiz is over you can submit your score and save it to the local storage. Once the score is submitted you can click to see all highscores or retake the quiz.
 
   - At anytime you can click the view highscores button in the top left corner, however if you're in the middle of the quiz, it will stop the quiz. 
-<p align="center">
+
 ![Video of Trivia Game](/assets/images/Trivia-Game-Walkthrough.gif)
-</p>
+
 ## Credits
 
 https://github.com/AnthonyFrederick7
