@@ -141,6 +141,8 @@ function quizEnd() {
     var finalScoreEl = document.getElementById("score-final");
     finalScoreEl.textContent = time;
     questionsEl.setAttribute("class", "hide");
+    var timer = document.querySelector('.timer')
+    timer.style.display='none';
 }
 
 // End quiz if timer reaches 0
