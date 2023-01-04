@@ -75,7 +75,7 @@ var reStartBtn = document.querySelector("#restart");
 // Quiz's initial state
 
 var currentQuestionIndex = 0;
-var time = questions.length * 10;
+var time = questions.length * 15;
 var timerId;
 
 // Start quiz and hide frontpage
