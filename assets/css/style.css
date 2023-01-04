@@ -152,7 +152,7 @@ li:nth-child(odd) {
     color: white;
 }
 
-@media screen and (max-width: 425px) {
+@media all and (max-width: 425px) {
     button { padding: 10px;
         font-size: medium;
     }
