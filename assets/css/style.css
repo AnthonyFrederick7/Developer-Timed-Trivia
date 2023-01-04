@@ -171,7 +171,7 @@ li:nth-child(odd) {
     }
     .timer {
         padding: 4px;
-        top: 18px;
+        top: 25%;
         font-size: 15px;
     }
     .scores a button {
