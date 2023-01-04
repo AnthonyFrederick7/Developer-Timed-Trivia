@@ -168,11 +168,11 @@ li:nth-child(odd) {
     .feedback {
         width: 100%;
         text-align: center;
-        top: 75%;
+        top: 79%;
     }
     .timer {
         padding: 4px;
-        top: 21%;
+        top: 18%;
         font-size: 15px;
     }
     .scores a button {
