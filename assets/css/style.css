@@ -147,11 +147,3 @@ li:nth-child(odd) {
     background-color: #001429;
     color: white;
 }
-
-/* This will be applied on any screen smaller than 768px */
-@media screen and (max-width: 768px) {
-}
-
-/* This will be applied on any screen smaller than 575px */
-@media screen and  (max-width: 575px) {
-}
