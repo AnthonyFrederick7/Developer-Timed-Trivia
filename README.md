@@ -1,10 +1,8 @@
-# NFL-Timed-Trivia
+#Timed-Trivia
 
 ## Description
 
-[Link to Trivia Game](https://anthonyfrederick7.github.io/NFL-Timed-Trivia/)
-
-The NFL Timed Trivia Game was created to test the users knowledge of the NFLs history/records. The game forces the user to also answer the questions in a timely manner (150 seconds). The user is able to store their highscores after the game via local storage.
+[Link to Trivia Game](https://anthonyfrederick7.github.io/Developer-Timed-Trivia/)
 
 ## Installation
 
