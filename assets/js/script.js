@@ -2,9 +2,9 @@
 
 var questions = [
   {
-      prompt: "1. What team won the first Super Bowl in 1967?",
-      options: ["Green Bay Packers", "Chicago Bears", "Kansas City Chiefs", "Dallas Cowboys"],
-      answer: "Green Bay Packers"
+      prompt: "1. This is the process of defining the experience the user would go through as they use the software",
+      options: ["User Interface Design", "User Experience Design", "User Centered Design", "Information Architecture"],
+      answer: "User Experience Design"
   },
 
   {
